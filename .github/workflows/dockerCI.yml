@@ -1,0 +1,44 @@
+name: Build and Push Docker Images
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Build Backend Image
+        run: docker build -t prince511/mean-backend:latest ./backend
+
+      - name: Build Frontend Image
+        run: docker build -t prince511/mean-frontend:latest ./frontend
+
+      - name: Push Backend Image
+        run: docker push prince511/mean-backend:latest
+
+      - name: Push Frontend Image
+        run: docker push prince511/mean-frontend:latest
+
+      - name: Deploy to EC2
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            cd /home/ubuntu/Devops-Deployment
+            sudo docker-compose down
+            sudo docker-compose pull
+            sudo docker-compose up -d
