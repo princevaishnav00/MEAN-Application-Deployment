@@ -22,7 +22,7 @@ The application will manage a collection of tutorials, where each tutorial inclu
 - Cloud Platform: AWS EC2 (Ubuntu)
 
 Architecture Diagram:  
-workflow-diagram.png
+Architecture-diagram.png
 
 ---
 
