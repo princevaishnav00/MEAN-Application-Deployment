@@ -22,8 +22,9 @@ The application will manage a collection of tutorials, where each tutorial inclu
 - Cloud Platform: AWS EC2 (Ubuntu)
 
 Architecture Diagram:  
-(.images/Architecture-diagram.png)
-
+<p align="center">
+  <img src=".images/Architecture-diagram.png" alt="Architecture Diagram" width="800"/>
+</p>
 ---
 
 ##  CI/CD Workflow
