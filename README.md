@@ -23,7 +23,7 @@ The application will manage a collection of tutorials, where each tutorial inclu
 
 Architecture Diagram:  
 <p align="center">
-  <img src=".images/Architecture-diagram.png" alt="Architecture Diagram" width="800"/>
+  <img src="./images/Architecture-diagram.png" alt="Architecture Diagram" width="800"/>
 </p>
 ---
 
