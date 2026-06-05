@@ -1,6 +1,6 @@
 
 
-# 🚀 MEAN Stack DevOps CI/CD Project
+# 🚀MEAN Stack Application Deployment on AWS using GitHub Actions
 
 This project demonstrates a  production-ready full-stack MEAN application  using the MEAN stack (MongoDB, Express, Angular 15, and Node.js). The backend will be developed with Node.js and Express to provide REST APIs, connecting to a MongoDB database. The frontend will be an Angular application utilizing HTTPClient for communication. 
 
